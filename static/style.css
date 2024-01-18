@@ -1,0 +1,793 @@
+body.login:before {
+  content: url("/static/background/Untitled.png");
+  display: none;
+}
+
+body.loginPage {
+  /* background: #a9e4e5;
+  background: linear-gradient(0deg, rgba(169,228,229,1) 43%, rgba(160,102,207,1) 100%); */
+  background-image: url("/static/background/Untitled.png");
+  background-size: cover;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  --color1: #1F9683;
+  --color2: #FFFEEB;
+}
+
+body.registerPage {
+  background-image: url("/static/background/Untitled.png");
+  background-size: cover;
+
+  overflow: hidden;
+  --color1: #1F9683;
+  --color2: #FFFEEB;
+}
+
+body.dashboardPage,
+body.profilePage,
+.TransactionPage {
+  --color1: #1F9683;
+  --color2: #FFFEEB;
+  --color3: #F0A532;
+  --color4: #E0FFFC;
+  --color5: #A2E5DE;
+  overflow: hidden;
+  background-color: var(--color1);
+}
+
+.container,
+.regContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 60%;
+}
+
+.regContainer {
+  /* transform: translate(130%, 10%); */
+  margin-top: 4%;
+  margin-left: 55%;
+}
+
+form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #E0FFFC;
+  border: 2px solid var(--color1);
+  border-radius: 25px;
+}
+
+.changePasswordForm {
+  border: none;
+  align-items: center;
+}
+
+section.header,
+section.regHeader {
+  color: var(--color1);
+  font-size: 1.5em;
+}
+
+#username,
+#password,
+#firstName,
+#lastName,
+#phone,
+#email,
+#name,
+#b_type,
+.custom-input,
+#transactionCategory,
+#transactionDescription,
+#transactionDate,
+#transactionAmount,
+#add-user-field {
+  background-color: var(--color2);
+  height: 30px;
+  width: 250px;
+  color: var(--color1);
+  text-indent: 5px;
+  border-radius: 6px;
+  border: 2px solid var(--color1);
+  font-size: 1em;
+  margin-bottom: 0.8em;
+}
+
+section.infoFields input#firstName {
+  margin-right: 0px;
+}
+
+section.infoFields input#firstName,
+section.infoFields input#lastName,
+section.infoFields input#email,
+section.infoFields input#phone,
+.custom-input,
+#add-user-field {
+  height: 30px;
+  width: 200px;
+}
+
+
+#firstName,
+#lastName {
+  width: 200px;
+}
+
+#firstName {
+  margin-right: 0.4em;
+}
+
+#lastName {
+  margin-left: 0.4em;
+}
+
+#b_type {
+  width: 200px;
+  margin-left: 0.4em;
+  height: 38px;
+}
+
+#name {
+  margin-left: 0.4em;
+  width: 192.2px;
+}
+
+#username::placeholder,
+#password::placeholder,
+#firstName::placeholder,
+#lastName::placeholder,
+#phone::placeholder,
+#email::placeholder,
+#name::placeholder,
+#b_type::placeholder,
+.custom-input::placeholder,
+#transactionCategory::placeholder,
+#transactionDescription::placeholder,
+#transactionDat::placeholder,
+#transactionAmount::placeholder,
+#add-user-field::placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-indent: 5px;
+  color: var(--color1);
+}
+
+#username:focus,
+#password:focus,
+#firstName:focus,
+#lastName:focus,
+#phone:focus,
+#email:focus,
+#name:focus,
+#b_type:focus,
+.custom-input:focus,
+#transactionCategory:focus,
+#transactionDescription:focus,
+#transactionDate:focus,
+#transactionAmount:focus,
+#add-user-field:focus {
+  border: 2px solid var(--color1);
+  background-color: var(--color1);
+  font-size: 1em;
+  outline: none;
+  color: var(--color2);
+  text-indent: 5px;
+}
+
+div.regContainer form section.fields input#username,
+div.regContainer form section.fields input#password,
+div.regContainer form section.fields input#email,
+div.regContainer form section.fields input#phone {
+  width: 424px;
+}
+
+.custom-input {
+  width: 192px;
+}
+
+.editSVG {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill: none;
+  stroke-width: 2;
+  stroke: var(--color1);
+  height: 24px;
+  width: 24px;
+}
+
+.deleteSVG {
+  fill: var(--color1);
+  height: 24px;
+  width: 24px;
+}
+
+section.buttons {
+  margin-bottom: 20px;
+}
+
+.buttons .login,
+.buttons .back,
+.buttons .register,
+.buttons .cancel,
+.addBudget,
+.edit,
+.delete,
+.editProfileButton,
+button#changePassword,
+.savePassword,
+.cancelSavePassword,
+.updateProfile,
+.add-user-button {
+  font-family: inherit;
+  display: inline-block;
+  width: 7.3em;
+  height: 2.4em;
+  margin: 4px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color1);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: var(--color1);
+  background-color: #E0DCB5;
+}
+
+.editProfileButton,
+button#changePassword {
+  background-color: var(--color2);
+}
+
+.savePassword,
+.cancelSavePassword {
+  z-index: 2;
+}
+
+.edit,
+.delete {
+  width: fit-content;
+  margin: 10px;
+  background-color: var(--color2);
+}
+
+.addBudget {
+  background-color: var(--color2);
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.buttons .login:before,
+.buttons .back:before,
+.buttons .register:before,
+.buttons .cancel:before,
+.addBudget:before,
+.edit:before,
+.delete:before,
+.editProfileButton:before,
+button#changePassword:before,
+.savePassword:before,
+.cancelSavePassword:before,
+.updateProfile:before,
+.add-user-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color1);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.buttons .login:hover,
+.buttons .back:hover,
+.buttons .register:hover,
+.buttons .cancel:hover,
+.addBudget:hover,
+.edit:hover,
+.delete:hover,
+.editProfileButton:hover,
+button#changePassword:hover,
+.savePassword:hover,
+.cancelSavePassword:hover,
+.updateProfile:hover,
+.add-user-button:hover {
+  color: var(--color2);
+}
+
+.edit:hover .editSVG {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill: none;
+  stroke-width: 2;
+  stroke: var(--color2);
+  height: 24px;
+  width: 24px;
+}
+
+.delete:hover .deleteSVG {
+  fill: var(--color2);
+  height: 24px;
+  width: 24px;
+}
+
+
+.buttons .login:before,
+.buttons .back:before,
+.buttons .register:before,
+.buttons .cancel:before,
+.addBudget:before,
+.edit:before,
+.delete:before,
+.editProfileButton:before,
+button#changePassword:before,
+.savePassword:before,
+.cancelSavePassword:before,
+.updateProfile:before,
+.add-user-button:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+}
+
+.buttons .login:hover:before,
+.buttons .back:hover:before,
+.buttons .register:hover:before,
+.buttons .cancel:hover:before,
+.addBudget:hover:before,
+.edit:hover:before,
+.delete:hover:before,
+.editProfileButton:hover:before,
+button#changePassword:hover:before,
+.savePassword:hover:before,
+.cancelSavePassword:hover:before,
+.updateProfile:hover:before,
+.add-user-button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.buttons .login:active:before,
+.buttons .back:active:before,
+.buttons .register:active:before,
+.buttons .cancel:active:before,
+.addBudget:active:before,
+.edit:active:before,
+.delete:active:before,
+.editProfileButton:active:before,
+button#changePassword:active:before,
+.savePassword:active:before,
+.cancelSavePassword:active:before,
+.updateProfile:active:before,
+.add-user-button:active:before {
+  background: var(--color3);
+}
+
+button#changePassword {
+  line-height: 1em;
+}
+
+.editProfileButton {
+  margin-right: 2.4em;
+}
+
+.savePassword {
+  margin-right: 2.2em;
+}
+
+.updateProfile {
+  margin-right: 2.9em;
+}
+
+.loginErrorMsg,
+.regErrorMsg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #F0A532;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h2.loginErrorMsg:not(:empty),
+h2.regErrorMsg:not(:empty) {
+  display: block;
+  background-color: #1F9683;
+}
+
+
+.userProfileSection,
+.budgetNameSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+}
+
+.userProfileSection {
+  height: 50px;
+}
+
+.budgetNameSection .welcome-message {
+  margin-bottom: 10px;
+  color: var(--color2);
+}
+
+.dashboardSection,
+.editSection,
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color5);
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 10px 60px;
+}
+
+.tran-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-section {
+  border-bottom: 10px solid #1F9683;
+}
+
+.editSection {
+  justify-content: flex-end;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.userInfoSection {
+  background-color: var(--color2);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 20px 100px;
+  height: 60vh;
+  text-align: center;
+  align-items: center;
+  border: 2px solid var(--color3);
+  border-left: none;
+  border-right: none;
+}
+
+.userInfoText {
+  display: flex;
+}
+
+.displayLabels,
+.userInfoLabel {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color1);
+  font-weight: bolder;
+  font-size: 2em;
+  gap: 2em;
+  text-align: left;
+  margin-left: 130px;
+}
+
+.userInfoLabel {
+  margin-left: 50px;
+  color: var(--color3);
+  gap: 2.3em;
+}
+
+.label {
+  margin-bottom: 10px;
+}
+
+.listSection,
+.list-transactions-section {
+  height: 100vh;
+  background-color: var(--color5);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.welcome-message {
+  font-size: 1.8em;
+  color: var(--color2);
+}
+
+.usernamesProfile {
+  font-size: 1.8em;
+  color: var(--color2);
+}
+
+span.usernameText {
+  font-weight: bold;
+  color: var(--color3);
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--color2);
+  font-size: 1.1em;
+}
+
+.links a:hover {
+  color: var(--color3)
+}
+
+a.dashboard-link {
+  font-size: 1.3em;
+}
+
+.dashboardDec,
+.transaction-header {
+  color: var(--color1);
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr {
+  background-color: var(--color2);
+
+}
+
+tr {
+  border: 2px solid var(--color3);
+  /* border-left: none;
+  border-right: none; */
+}
+
+tr td {
+  text-align: center;
+  color: var(--color1);
+  font-size: 1.2em;
+  letter-spacing: 0.8px;
+}
+
+td:first-child {
+  padding-left: 30px;
+}
+
+.overlay,
+.overlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+}
+
+.overlay:target,
+.overlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: var(--color4);
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+}
+
+.popup2 {
+  margin-top: -4.5%;
+  margin-left: -25%;
+  background: var(--color4);
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+p.newPasswordPrompt {
+  color: var(--color1);
+  font-weight: bolder;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.savePasswordContent {
+  margin: 0;
+  padding: 0;
+}
+
+.editfields {
+  display: flex;
+}
+
+.infoFields {
+  text-align: right;
+}
+
+.labels {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color1);
+  font-weight: bolder;
+  font-size: 17px;
+  text-align: left;
+}
+
+.tran-labels {
+  gap: 6px;
+}
+
+.labales-trans {
+  white-space: nowrap;
+}
+
+.budget-form {
+  background-color: var(--color2);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.budget-link {
+  display: block;
+  margin: 0 auto;
+}
+
+.singleBudget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color2);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px 60px;
+  border: 2px solid var(--color3);
+  color: var(--color1);
+  font-size: 1.2em;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+}
+
+.budget-link {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  padding-bottom: 10px;
+  color: var(--color1);
+  font-size: 1.2em;
+  letter-spacing: 0.8px;
+  padding-bottom: 10px;
+}
+
+.budget-link:hover {
+  color: var(--color3);
+}
+
+.bud-name {
+  padding: 50px 64px;
+  color: var(--color1);
+  font-size: 1.8em;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+}
+
+.new-budget-prompt {
+  text-align: center;
+  color: var(--color1);
+  font-weight: bolder;
+  font-size: 1.8em;
+  ;
+}
+
+.add-budget-form,
+.add-new-user-form {
+  border: none;
+}
+
+.infoFieldsB-type {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.list-transactions-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tran-table {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 190%;
+}
+
+section.infoFieldsB-type input.input-btype {
+  background-color: red;
+}
+
+.chart-container {
+  position: relative;
+}
+
+#myChart {
+  width: 370px;
+  height: 370px;
+  left: 50%;
+  top: 50%;
+  transform: translate(100%, 0%);
+}
+
+/* #transactionCategory{
+  height: 38px;
+  width: 236px;
+} */
+#transactionDescription {
+  margin-top: -14px;
+}
+
+#transactionDescription,
+#transactionDate,
+#transactionAmount {
+  width: 208px;
+}
+
+#transactionCategory {
+  width: 216px;
+  height: 36px;
+}
+
+#transactionDate {
+  width: 211.2px;
+  height: 32px;
+}
+
+@media screen and (max-width: 700px) {
+  .popup {
+    width: 70%;
+  }
+
+  .popup2 {
+    width: 70%;
+  }
+}

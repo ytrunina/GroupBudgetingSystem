@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preload" href="/static/background/Untitled.png" as="image">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="registerPage">
+  <!-- <h1 class="regHeader">Registration</h1> -->
+  <h2 class="regErrorMsg">
+    {% if failed %}
+    {{ exception }}
+    {% endif %}
+  </h2>
+  <div class="regContainer">
+    <form action="/register" method="POST">
+      <section class="regHeader">
+        <h1 class="registerHeader">Registration</h1>
+      </section>
+      <section class="firstLastNames">
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required><br>
+      </section>
+      <section class="fields">
+        <input type="email" id="email" name="regemail" placeholder="Email" required><br>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required><br>
+        <input type="text" id="username" name="regusername" placeholder="Username" required><br>
+        <input type="password" id="password" name="regpassword" placeholder="Password" required><br>
+      </section>
+      <section class="buttons">
+        <button class="register" type="submit">Register</button>
+        <button class="cancel" type="button" onclick="location.href='/'">Cancel</button>
+      </section>
+    </form>
+  </div>
+</body>
+
+</html>

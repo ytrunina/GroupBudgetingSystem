@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- <link rel="stylesheet" href="/static/styleslogin.css"> -->
+  <link rel="preload" href="/static/background/Untitled.png" as="image">
+  <title>Login Page</title>
+</head>
+
+<body class="loginPage">
+  <!-- <img src="/background/shapelined-_JBKdviweXI-unsplash.jpg" alt="description of the image">  -->
+  <h2 class="loginErrorMsg">
+    {% if failed %}
+    Incorrect username or password. Please try again.
+    {% endif %}
+  </h2>
+  <div class="container">
+    <form action="/login" method="POST">
+      <section class="header">
+        <h1 class="signin">Sign In</h1>
+      </section>
+      <section class="fields">
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
+      </section>
+      <section class="buttons">
+        <button class="login" type="submit">Sign In</button>
+        <button class="back" type="button" onclick="location.href='/'">Back</button>
+      </section>
+    </form>
+  </div>
+</body>
+
+</html>

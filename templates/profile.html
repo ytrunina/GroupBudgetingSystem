@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- <link rel="stylesheet" href="/static/style.css"> -->
+  <title>{{ session.username }}'s Profile</title>
+</head>
+
+<body class="profilePage">
+  <section class="userProfileSection">
+    <p class="usernamesProfile"><span class="usernameText">{{ session.username }}</span>'s Profile</p>
+    <div class="links">
+      <a class="dashboard-link" onclick="location.href='/dashboard'">Dashboard </a>
+    </div>
+  </section>
+  <section class="editSection">
+    <button class="editProfileButton" onclick="window.location.href='#popup2'">Edit Profile</button> <br>
+    <button id="changePassword" onclick="window.location.href='#popup1'">Change Password</button>
+  </section>
+  <section class="userInfoSection">
+    <section class="userInfoText">
+      <section class="displayLabels">
+        <span class="label">Name:</span>
+        <span class="label">Email:</span>
+        <span class="label">Phone Number:</span>
+      </section>
+      <section class="userInfoLabel">
+        <span class="userInfo">{{ first_name ~ " " ~ last_name }}</span>
+        <span class="userInfo">{{ email }}</span>
+        <span class="userInfo">{{ phone }}</span>
+      </section>
+    </section>
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <p class="newPasswordPrompt">Please enter new password:</p>
+        <div class="savePasswordContent">
+          <form class="changePasswordForm" action="/change_password" method="POST">
+            <input type="password" id="password" name="regpassword" placeholder="New Password" required><br>
+            <section class="passwordButtons">
+              <button class="savePassword" type="submit">Save</button>
+              <button class="cancelSavePassword" type="button" onclick="location.href='/profile'">Cancel</button>
+            </section>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+  <br>
+  <div id="popup2" class="overlay2">
+    <div class="popup2">
+      <div class="container">
+        <form action="/edit_profile" method="POST">
+          <section class="editfields">
+            <section class="labels">
+              <label class="firstNameLabel" for="firstName">First Name:</label> <br>
+              <label class="lastNameLabel" for="lastName">Last Name:</label> <br>
+              <label class="emailLabel" for="email">Email:</label> <br>
+              <label class="telLabel" for="tel">Phone Number:</label> <br>
+            </section>
+            <section class="infoFields">
+              <input type="text" id="firstName" name="firstName" value="{{ first_name }}" required> <br>
+              <input type="text" id="lastName" name="lastName" value="{{ last_name }}" required><br>
+              <input type="email" id="email" name="regemail" value="{{ email }}" required><br>
+              <input type="tel" id="phone" name="phone" value="{{ phone }}" required><br>
+            </section>
+          </section>
+          <section class="buttons">
+            <button class="updateProfile" type="submit">Save</button>
+            <button class="cancel" type="button" onclick="location.href='/profile'">Cancel</button>
+          </section>
+        </form>
+      </div>
+    </div>
+  </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Add New Budget</title>
+</head>
+
+<body>
+	<h1>Add a New Budget</h1>
+	<form action="{{ url_for('add_budget') }}" method="POST">
+
+		<label for="b_type">Budget Type:</label>
+		<select name="b_type" id="b_type">
+			{% for budget in budget_types %}
+			<option value="{{ budget[0] }}">{{ budget[1] }}</option>
+			{% endfor %}
+		</select><br><br>
+
+		<label for="name">Budget Name:</label>
+		<input type="text" name="name" id="name"><br><br>
+		<button type="submit">Submit</button>
+	</form>
+	<button onclick="window.location.href='/dashboard'">Go Back</button>
+</body>
+
+</html>

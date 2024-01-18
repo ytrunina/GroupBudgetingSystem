@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vaqay - Travel Smart</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styleLanding.css') }}">
+  <style>
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <!-- <img class="logo" src="/static/background/logo.png" alt="logo"> -->
+
+    <h1>Vaqay</h1>
+    <h2>Travel smart, spend smarter</h2>
+  </div>
+  <section class="welcomeMsg">
+    <p1>A revolutionary tool designed to help you plan your next trip, without breaking the bank.</p1>
+    <br>
+    <p2>Ready to start saving? Sign up or login to get started!</p2>
+  </section>
+  <div class="loginRegister">
+    <section class="buttons">
+      <button class="login" type="button" onclick="location.href='/login'">Login</button>
+
+      <button class="register" type="button" onclick="location.href='/register'">Register</button>
+
+    </section>
+  </div>
+</body>
+
+</html>
